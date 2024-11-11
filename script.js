@@ -143,13 +143,22 @@ fetchNews();
 // Fetch Quote of the Day
 async function fetchQuote() {
     try {
-        const response = await fetch(quoteApiUrl);
+        const quoteApiUrl = "https://cors-anywhere.herokuapp.com/http://api.quotable.io/random"; // Updated URL
+        const response = await fetch(quoteApiUrl, {
+            method: 'GET',
+            headers: {
+                'Origin': window.location.origin, // Add the Origin header
+            }
+        });
+
         const data = await response.json();
-        if (data.content.length <= 50) { // Adjust the length limit as needed
+
+       
+        if (data.content.length <= 50) { 
             quoteElement.textContent = `"${data.content}"`;
             quoterElement.textContent = `~${data.author}`;
         } else {
-            fetchQuote(); // Try fetching again if the quote is too longer than the required area
+            fetchQuote(); // Try fetching again if the quote is too long
         }
     } catch (error) {
         console.error("Error fetching quote:", error);
@@ -157,7 +166,6 @@ async function fetchQuote() {
         quoterElement.textContent = "";
     }
 }
-
 
 
 function addTask() {
