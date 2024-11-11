@@ -132,7 +132,7 @@ async function fetchNews() {
                 newsListElement.appendChild(li);
             });
         } else {
-            newsListElement.innerHTML = "<li>No news available at the moment.</li>";
+            newsListElement.innerHTML = "<li>No news available at the moment-API EXHAUSTED!.</li>";
         }
     } catch (error) {
         console.error("Error fetching news:", error);
