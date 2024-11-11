@@ -151,29 +151,14 @@ async function fetchQuote() {
             }
         });
 
-       
-        console.log('Response Status:', response.status);
-        console.log('Response Content-Type:', response.headers.get('Content-Type'));
+        const data = await response.json();
 
-       
-        const responseText = await response.text();
-
-       
-        try {
-            const data = JSON.parse(responseText); // Try parsing the response as JSON
-            // Check if the quote is short enough
-            if (data.content.length <= 50) { 
-                quoteElement.textContent = `"${data.content}"`;
-                quoterElement.textContent = `~${data.author}`;
-            } else {
-                fetchQuote(); 
-            }
-        } catch (jsonError) {
-            console.error('Failed to parse JSON:', jsonError);
-            quoteElement.textContent = "Failed to load quote";
-            quoterElement.textContent = "";
+        if (data.content.length <= 50) { 
+            quoteElement.textContent = `"${data.content}"`;
+            quoterElement.textContent = `~${data.author}`;
+        } else {
+            fetchQuote(); // Try fetching again if the quote is too long
         }
-
     } catch (error) {
         console.error("Error fetching quote:", error);
         quoteElement.textContent = "Failed to load quote";
