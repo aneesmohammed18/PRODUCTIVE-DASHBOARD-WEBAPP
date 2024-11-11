@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="leftcontainer">
+   <img id="logo"   src="assets/logo.png" alt="logo">
+   <div class="newscontainer">
+        <h1 id="newstitle">Breaking News</h1>
+        <ul id="newslist">
+             
+        </ul>
+   </div>
+</div>
+<div class="midcontainer">
+          <div class="todocontainer">
+            <div class="todostats">
+                <h1 id="todotitle">TO DO</h1>
+            </div>
+             <input id="taskinput" type="text" placeholder="ENTER THE TASK">
+             <button  onclick="addTask()" id="addTaskButton">ADD TASK</button>
+
+             <ul id="tasklist">
+             </ul>
+          </div> 
+          
+
+
+          <div class="weather">
+            <img src="" alt="" id="weathericon">
+            <h1 id="location">
+                 
+            </h1>
+            <h1 id="weatherdescription">
+            </h1>
+        </div>
+        <img id="theme" src="assets/moon.png" alt="">
+</div>
+<div class="rightcontainer">
+         <div class="usercontainer">
+            <h1 id="username">Not logged in</h1>
+            <h1 id="email"></h1>
+            <button id="logoutButton">LOG OUT</button>
+            <div class="userimage">
+                <img src="assets/default.png" alt="userpicture" id="userpicture">
+            </div>
+          </div>
+        </div>
+<div class="calendercontainer">
+    <div class="calender">
+        <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata" style="border-radius:20px;" width="350" height="300" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+<div class="quotecontainer">
+    <h1 id="title">QUOTE OF THE DAY</h1>
+    <h1 id="quote"></h1>
+       <h3 id="quoter">~ANEES</h3>
+</div>
+</div>
+
+
+    
+    <script src="script.js"  type="module"></script>
+</body>
+</html>

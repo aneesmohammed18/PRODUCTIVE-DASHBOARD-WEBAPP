@@ -1,0 +1,655 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+     margin: 0;
+     padding: 0;
+     height: 100vh;
+     width: 100vw;
+}
+body{
+    display: grid;
+    grid-template-columns: 400px auto 400px;
+    overflow-x: hidden;
+} 
+.leftcontainer{
+       height: 100vh;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+}
+#logo{
+     height:auto;
+     max-width:250px;
+     margin: 30px;
+     padding: 10px;
+}
+.newscontainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 40px;
+    padding:10px 10px;
+}
+#newstitle{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: black;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+#newslist{
+    position: absolute;
+     display: flex;
+     flex-direction: column;
+     top: 110px;
+     padding: 5px 5px;
+     list-style: decimal;
+     list-style-position: inside;
+     gap: 10px;
+     font-size: 1.2em;
+}
+.midcontainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+}
+.todocontainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+    width: 400px;
+    top: 30px;
+    left: 40px;
+    background-color: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    margin: 20px;
+}
+
+#todotitle{
+    color: black;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.todocontainer input{
+       height: 30px;
+       width: 80%;
+       margin: 10px 10px;
+       text-align: center;
+       font-size: 15px;
+       border-radius: 30px;
+       border: 2px solid black;
+}
+.todocontainer button{
+     width:150px ;
+     height: 20px;
+     border-radius: 20px;
+     border: black 2px solid;
+     color: black;
+     background-color: white;
+     transition: all ease-in-out .5s;
+}
+.todocontainer button:hover{
+          color: white;
+          background-color: black;
+}
+#tasklist{
+        height: 300px;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        list-style-position: inside;
+        margin: 20px;
+        gap: 10px;
+        font-size: .8em;
+        text-align: left;
+        border-radius: 20px;
+        padding: 10px 10px;
+        overflow-x: scroll;
+}
+/* .task-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+} */
+
+/* .task-item span {
+    width: auto;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.task-item input[type="checkbox"] {
+    float: left;
+    transform: scale(1);
+}
+
+.task-item img {
+    cursor: pointer;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+} */
+#tasklist li{
+    position: relative;
+       width: 100%;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content:center;
+       background-color: #f9f9f9;
+       border-radius: 10px;
+       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+       transition: all ease .1s;
+}
+#tasklist li:hover{
+    transform: scale(1.05);
+}
+#tasklist input{
+     position: absolute;
+     left: 10px;
+      width: 20%;
+      height: 10px;
+      width: 10px;
+}
+#tasklist span{
+    width:auto;
+    font-size: 1rem;
+    margin: 5px 5px;
+    text-transform: uppercase;
+}
+#tasklist img{
+    position: absolute;
+    right: 10px;
+    margin:10px 20px;
+    width: 20%;
+    height: 10px;
+    width: 10px;
+}
+.weather{
+      position: absolute;
+      height: 100px;
+      width:300px;
+      background-color: rgba(255, 255, 255, 0.692);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+      border-radius: 40px;
+      top: 500px;
+      left: 440px;
+      margin: 10px 20px;
+}
+.weather img{
+    position: absolute;
+      height: 80px;
+      width: 80px;
+      background-color: black;
+      border-radius: 50%;
+      left: 20px;
+      top: 8px;
+      object-fit: cover;
+      object-position: center;
+}
+.weather #location{
+      position: absolute;
+      left: 110px;
+      top: 10px;
+}
+.weather #weatherdescription{
+    position: absolute;
+    left: 110px;
+    top: 40px;
+}
+.rightcontainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+}
+.usercontainer{
+       position: absolute;
+       background-color: rgba(255, 255, 255, 0.692);
+       backdrop-filter: blur(20px);
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+       height: 120px;
+       width: 400px;
+       display: flex;
+       flex-direction:column;
+       align-items:left;
+       border-radius:30px;
+       margin: 10px 20px;
+       padding:10px 20px;
+       right: 30px;
+}
+.usercontainer #username{
+        font-size: 1.8rem;
+        text-transform: uppercase;
+}
+.usercontainer #email{
+    font-size: 1rem;
+}
+.usercontainer button{
+         height: 40px;
+         width: 130px;
+         border-radius: 15px;
+         margin-top: 10px;
+         background-color: white;
+}
+.usercontainer button:hover{
+           color: white;
+           background-color: black;
+}
+
+
+.userimage img{
+         position: absolute;
+         top: 20px;
+         right: 0px;
+         height: 80px;
+         width: 80px;
+         border-radius: 50%;
+         object-fit: cover;
+         object-position: center;
+         margin-right: 10px;
+    }
+
+#theme{
+    position: absolute;
+       border-radius: 50%;
+       background-color:white;
+       backdrop-filter: blur(20px);
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+       height: 70px;
+       width: 70px;
+       margin: 10px 20px;
+       top: 520px;
+       left: 760px;
+}
+.calendercontainer{
+    position: absolute;
+      height: 350px;
+      width: 380px;
+      border-radius: 40px;
+      background-color: rgba(255, 255, 255, 0.692);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 57px;
+      top: 150px;
+      margin-right: 10px;
+}
+.calender i{
+    height: 290px;
+    width: 370px;
+}
+.quotecontainer{
+    position: absolute;
+    height: 100px;
+    width:380px;
+    background-color: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    margin: 10px;
+    right: 57px;
+    top: 510px;
+    text-align: center;
+}
+.quotecontainer #title{
+         font-size: 1.6rem;
+         text-align: center;
+}
+.quotecontainer #quote{
+         font-size: 1rem;
+         text-align: center;
+         margin-top: 10px;
+         margin-left: 10px;
+}
+.quotecontainer #quoter{
+    position: absolute;
+    font-size: .7rem;
+    text-align: right;
+    margin-top: 10px;
+    padding-right: 60px;
+    bottom: 9px;
+    right: 5px;
+}
+
+
+
+
+body.dark-mode {
+    background-color: #000;
+    color: #f0f0f0;
+}
+
+body.dark-mode .todocontainer,
+body.dark-mode .newscontainer,
+body.dark-mode .usercontainer,
+body.dark-mode .weather,
+body.dark-mode .calendercontainer,
+body.dark-mode .quotecontainer,
+body.dark-mode #theme {
+    background-color: #444;
+    color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(247, 245, 245, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode .todocontainer,
+body.dark-mode .todocontainer #todotitle,
+body.dark-mode .newscontainer,
+body.dark-mode .newscontainer #newstitle,
+body.dark-mode .usercontainer,
+body.dark-mode .weather,
+body.dark-mode .calendercontainer,
+body.dark-mode .quotecontainer
+      {
+    color: white;
+}
+
+body.dark-mode input, 
+body.dark-mode button 
+{
+    background-color: #000;
+    color: #f0f0f0;
+}
+
+
+/* //scrollbar */
+
+::-webkit-scrollbar {
+    width: 12px;      
+    height: 12px;     
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;       
+    border-radius: 10px;       
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #888;         
+    border-radius: 10px;      
+    border: 2px solid #f1f1f1; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;          
+}
+
+
+::-webkit-scrollbar-corner {
+    background: #f1f1f1;       
+}
+
+
+/* RESPONSIVE */
+
+
+@media only screen and (max-width:440px) {
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 800px;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .newscontainer{
+       width: 100%;
+       margin: 20px 20px;
+    }
+    .newscontainer li{
+        font-size: 2rem;
+    }
+
+.quotecontainer{  
+    width: 800px;  
+    top: 1330px;
+    left: 5px;
+    margin-bottom: 0px;
+}
+
+.rightcontainer{
+     height: 180px;
+}
+.usercontainer{
+    height: 100px;
+    margin:30px;
+    top: 0;
+    left: 400px;
+}
+.usercontainer #username{
+     font-size: 1.5rem;
+}
+.usercontainer .userimage{
+    position: absolute;
+     top: -10px;
+     right: 0px;
+     height: 50px;
+     width: 50px;
+}
+
+.calendercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120%;
+    left: 30px;
+    top: 950px;
+    margin-bottom: 0px;
+
+}
+.calendercontainer iframe{
+    position: absolute;
+    width: 85%;
+   left: 30px;
+   top: 20px;
+}
+.todocontainer{
+    width: 800px;
+    height: 500px;
+    left: 0px;
+    top: 550px;
+    margin: 50px 10px;
+}
+.weather{
+    width: 280px;
+    font-size: 1rem;
+    top: 1000px;
+    left: 530px;
+}
+#theme{
+    width: 100px;
+    height: 100px;
+      top: 1150px;
+      left: 650px;
+}
+
+}
+
+
+@media only screen and (min-width:441px) and  (max-width: 768px) {
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 550px 550px;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+       .newscontainer{
+        width: 100%;
+        margin: 20px 20px;
+       }
+       .newscontainer li{
+          font-size: 2rem;
+       }
+       .usercontainer{
+        top: 3%;
+        left: 80%;
+       }
+       .calendercontainer{
+        width: 450px;
+          top: 20%;
+          left: 80%;
+       }
+       .weather{
+        top: 58%;
+        left: 75%;
+        margin: 30px;
+       }
+       #theme{
+        top: 62%;
+        left: 120%;
+
+       }
+       .quotecontainer{
+            top: 75%;
+            left: 80%;
+            width: 400px;
+            height: 200px;
+       }
+      .quotecontainer #quote{
+          font-size: 2rem;
+          margin: 10px;
+       }
+       .todocontainer{
+           top: 100%;
+           left: -93%;
+           width: 180%;
+       }
+
+}
+@media only screen and (min-width:769px) and  (max-width: 819px) {
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 400px 300px 300px;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+       .newscontainer{
+        width: 100%;
+        margin: 20px 20px;
+       }
+       .newscontainer li{
+          font-size: 2rem;
+       }
+       .usercontainer{
+        top: 3%;
+        left: 80%;
+       }
+       .calendercontainer{
+        width: 450px;
+          top: 20%;
+          left: 80%;
+       }
+       .weather{
+        top: 58%;
+        left: 75%;
+        margin: 30px;
+       }
+       #theme{
+        top: 62%;
+        left: 120%;
+
+       }
+       .quotecontainer{
+            top: 75%;
+            left: 80%;
+            width: 400px;
+            height: 200px;
+       }
+      .quotecontainer #quote{
+          font-size: 2rem;
+          margin: 10px;
+       }
+       .todocontainer{
+           top: 100%;
+           left: -93%;
+           width: 180%;
+       }
+}
+@media only screen and (min-width:820px) and  (max-width: 1024px) {
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 400px 400px 400px;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+       .newscontainer{
+        width: 100%;
+        margin: 20px 20px;
+       }
+       .newscontainer li{
+          font-size: 2rem;
+       }
+       .usercontainer{
+        top: 3%;
+        left: 80%;
+       }
+       .calendercontainer{
+        width: 450px;
+          top: 20%;
+          left: 80%;
+       }
+       .weather{
+        top: 58%;
+        left: 75%;
+        margin: 30px;
+       }
+       #theme{
+        top: 62%;
+        left: 120%;
+
+       }
+       .quotecontainer{
+            top: 75%;
+            left: 80%;
+            width: 400px;
+            height: 200px;
+       }
+      .quotecontainer #quote{
+          font-size: 2rem;
+          margin: 10px;
+       }
+       .todocontainer{
+           top: 100%;
+           left: -93%;
+           width: 180%;
+       }
+}
+
