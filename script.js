@@ -18,7 +18,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(); // Use the imported GoogleAuthProvider
 
 
-const quoteApiUrl = "http://api.quotable.io/random";  // API for fetching quotes
+const quoteApiUrl = "https://cors-anywhere.herokuapp.com/http://api.quotable.io/random";  // API for fetching quotes
 
 // DOM Elements
 let userNameElement, userEmailElement, userPictureElement;
